@@ -66,11 +66,19 @@ picture {
     --Gray800: hsl(0, 0%, 12%);
     --Gray900: hsl(0, 0%, 8%);
 
+    /* spacing */
+    --space-50: 0.25rem;
+    --space-100: 0.5rem;
+    --space-150: 0.75rem;
+    --space-200: 1rem; 
+    --space-300: 1.5rem;
+    --space-500: 2.5rem;
+
     /* font families */
     --main: "Inter", sans-serif;;
 
     /* type scale */
-    --base-size: 1rem; /* this sets the default base to 16px*/
+    --base-size: .875rem; /* this sets the default base to 14px*/
     --scale: 1.333;
     --h1: calc(var(--h2) * var(--scale));
     --h2: calc(var(--h3) * var(--scale));
@@ -158,8 +166,6 @@ picture {
         margin-top: 2rem;
     }
     .attribution p{ font-size: var(--small); text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-
 
     body {
         background-color: var(--Gray900);
@@ -171,25 +177,67 @@ picture {
     align-items: center;
     justify-content: center;
     min-height: 90vh;
-    padding: 0 1.5rem;
+    text-align: center;
   }
   .card {
     background-color: var(--Gray800);
-    border-radius: 1.25rem;
-    padding: 1.5rem;
-    max-width: 24rem;
-    min-width: 20.438rem;
+    border-radius: var(--space-150);
+    padding: var(--space-300);
+    max-width: 20.438rem;
     margin: auto;
     display: flex;            
-    flex-direction: column;   
-    gap: 1.5rem;
-    position: relative;
+    flex-direction: column;
+    align-items: center;   
+    gap: var(--space-300);
   }
 
   .profile-image {
     aspect-ratio: 1/1;
     width: 5.5rem;
     border-radius: 50%;  }
+
+  .location {
+    color: var(--Green);
+    font-weight: 700;
+  }
+
+  .profile-info p {
+    margin-top: var(--space-50);
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: var(--space-300);
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+  ul li {
+    color: var(--White);
+    font-weight: 700;
+  }
+  ul li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-150);
+    border-radius: var(--space-100);
+    background-color: var(--Gray700);
+    transition: background-color 600ms ease, color 600ms ease;
+  }
+  ul li a:hover, ul li a:focus, ul li a:active {
+    text-decoration: none;
+    background-color: var(--Green);
+    color: var(--Gray700);
+
+  }
 }
 
 @layer media-queries {
