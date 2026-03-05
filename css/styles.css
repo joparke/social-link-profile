@@ -78,7 +78,7 @@ picture {
     --main: "Inter", sans-serif;;
 
     /* type scale */
-    --base-size: 1rem; /* this sets the default base to 14px*/
+    --base-size: .875rem; /* this sets the default base to 14px*/
     --scale: 1.333;
     --h1: calc(var(--h2) * var(--scale));
     --h2: calc(var(--h3) * var(--scale));
@@ -102,7 +102,6 @@ picture {
   body {
     font-family: var(--main);
     line-height: 1.5;
-    font-size: calc(var(--base-size) - 0.125rem); /* this reduces the body font size to 14px*/
     margin: 0;
     padding: 0;
   }
