@@ -173,6 +173,7 @@ picture {
     body {
         background-color: var(--Gray900);
         color: var(--White);
+        font-size: var(--base-size);
     }
 
   main {
