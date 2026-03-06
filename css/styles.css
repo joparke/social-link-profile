@@ -219,6 +219,10 @@ picture {
     font-size: var(--space-300);
   }
 
+  nav {
+    width: 100%;
+  }
+
   ul{
     display: flex;
     flex-direction: column;
@@ -256,5 +260,9 @@ picture {
     max-width: 24rem;
     padding: var(--space-500);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+  transition: none; /* Remove transitions to respect user preference */
+}
   } 
 }
