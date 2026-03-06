@@ -78,15 +78,18 @@ picture {
     --main: "Inter", sans-serif;;
 
     /* type scale */
-    --base-size: .875rem; /* this sets the default base to 14px*/
+    --base-size: 0.875rem; /* 14px */
     --scale: 1.333;
-    --h1: calc(var(--h2) * var(--scale));
-    --h2: calc(var(--h3) * var(--scale));
-    --h3: calc(var(--h4) * var(--scale));
+
+    /* Start from base size for smallest heading */
+    --h6: var(--base-size); 
+    --h5: calc(var(--h6) * var(--scale)); /* scale up from h6 */
     --h4: calc(var(--h5) * var(--scale));
-    --h5: calc(var(--h6) * var(--scale));
-    --h6: var(--base-size);
-    --small: calc(var(--base-size) / var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h1: calc(var(--h2) * var(--scale));
+
+    --small: calc(var(--base-size) / var(--scale)); /* smaller than base */
   }
 
   /* border box model: https://css-tricks.com/box-sizing/ */
@@ -187,7 +190,9 @@ picture {
     background-color: var(--Gray800);
     border-radius: var(--space-150);
     padding: var(--space-300);
-    min-width: 20.438rem;
+    /* min-width: 20.438rem; */
+    width: 100%;           /* Allow card to fill container width */
+    max-width: 20.438rem;  /* Limit max size on larger screens */
     margin: auto;
     display: flex;            
     flex-direction: column;
@@ -248,7 +253,7 @@ picture {
 @layer media-queries {
   @media (min-width: 48rem) {
       .card {
-    min-width: 24rem;
+    max-width: 24rem;
     padding: var(--space-500);
   }
   } 
